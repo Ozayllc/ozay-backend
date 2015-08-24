@@ -92,13 +92,21 @@ ozayApp
 		}
 	})
 	.state('home.dashboard', {
-		url: "/dashboard",
-		templateUrl: "/views/dashboard.html",
-		controller: 'DashboardController',
-		access: {
-			authorizedRoles: [USER_ROLES.user]
-		}
-	})
+      		url: "/dashboard",
+      		templateUrl: "/views/dashboard.html",
+      		controller: 'DashboardController',
+      		access: {
+      			authorizedRoles: [USER_ROLES.user]
+      		}
+      	})
+    .state('home.divelog', {
+    		url: "/divelog",
+    		templateUrl: "/views/divelog.html",
+    		controller: 'DiveLogController',
+    		access: {
+    			authorizedRoles: [USER_ROLES.user]
+    		}
+    })
 	.state('home.notification_create', {
 		url: "/notification_create",
 		templateUrl: "/views/notification_create.html",
