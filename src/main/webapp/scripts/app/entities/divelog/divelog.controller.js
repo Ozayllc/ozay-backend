@@ -1,17 +1,7 @@
-'use strict';
 
-angular.module('ozayApp')
-.controller('DiveLogController', function ($rootScope, $scope, $cookieStore, Dashboard) {
-    $scope.dashboard = [];
+ 'use strict';
 
-		$scope.sites = sites;
-
-		var sites = [
-          "Shaab El Erg",
-          "Abu Gotta Ramada",
-          "El Arouk",
-          "Small Giftun",
-          "Erg Somaya"
-        ];
-
-});
+ angular.module('diveLog',[])
+              .controller('diveLogCtrl',function DiveLogCtrl($scope) {
+             $scope.dives = dives;
+             });

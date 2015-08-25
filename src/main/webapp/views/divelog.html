@@ -1,27 +1,54 @@
-<div class="container-fluid" ng-controller="DiveLogController">
-    <h1>Dive Sites Maintenance</h1>
-    <div class="row">
-        <div class="col-sm-12">
-            <button class="btn btn-primary btn-lg">
-                Add new dive
-            </button>
-        </div>
-    </div>
-    <h2>List of Dive Sites</h2>
-    <div class="row" ng-repeat="site in sites"
-         ng-class="{oddRow: $index % 2 == 0}">
-        <div class="col-sm-8">
-            <h4>{{$index + 1}}: {{site}}</h4>
-        </div>
-        <div class="col-sm-4" style="margin-top: 5px;">
-            <div class="pull-right">
-                <button class="btn btn-warning btn-sm">
-                    Edit
-                </button>
-                <button class="btn btn-danger btn-sm">
-                    Delete
-                </button>
-            </div>
+﻿﻿<!DOCTYPE html>
+<html ng-app="diveLog"> <!--tells engine than an angular application should should be bootstrapped and territory of app is everything within
+the opening and closing html tags-->
+<head>
+    <title>Dive Log (ng-controller)</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div class="container-fluid">
+    <h1>My Latest Dives (ng-controller)</h1>
+    <div class="row"
+       ng-init="dives=[
+  {
+    site: 'Abu Gotta Ramada',
+    location: 'Hurghada, Egypt',
+    depth: 72,
+    time: 54
+  },
+  {
+    site: 'Ponte Mahoon',
+    location: 'Maehbourg, Mauritius',
+    depth: 54,
+    time: 38
+  },
+  {
+    site: 'Molnar Cave',
+    location: 'Budapest, Hungary',
+    depth: 98,
+    time: 62
+  }]">
+        <div class="col-sm-4"
+             ng-repeat="dive in dives">
+            <h3>{{dive.site}}</h3>
+            <h4>{{dive.location}}</h4>
+            <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
         </div>
     </div>
 </div>
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="views/dives.js"></script>
+<!--
+<script>
+ angular.module('ozayApp',[])
+              .controller('diveLogCtrl',DiveLogCtrl);
+
+             function DiveLogCtrl($scope) {
+             $scope.dives = dives;
+             }
+
+ </script>
+-->
+</body>
+</html>
