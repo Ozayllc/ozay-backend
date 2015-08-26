@@ -102,7 +102,7 @@ ozayApp
     .state('home.divelog', {
     		url: "/divelog",
     		templateUrl: "/views/divelog.html",
-    		controller: 'diveLogCtrl',
+    		controller: 'DiveLogController',
     		access: {
     			authorizedRoles: [USER_ROLES.user]
     		}

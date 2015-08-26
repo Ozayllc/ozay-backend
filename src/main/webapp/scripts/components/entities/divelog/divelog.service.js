@@ -1,3 +1,5 @@
+
+/*
 'use strict';
 
 angular.module('ozayApp')
@@ -5,3 +7,4 @@ angular.module('ozayApp')
 	return $resource('api/divelog', {}, {
     	});
 });
+*/
